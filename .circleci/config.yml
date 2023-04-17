@@ -18,7 +18,7 @@ jobs:
       - run:
           name: Running application
           command: |
-            python billing_system.py
+            python3 billing_system.py
       - save_cache:
           key: 'cache-v1-{{ checksum "requirements.txt" }}'
           paths:
@@ -34,7 +34,7 @@ jobs:
             - 'cache-v1-{{ checksum "requirements.txt" }}'
       - run:
           name: Running tests 1
-          command: pytest test_billing_system_1.py
+          command: python3 test_billing_system_1.py
       - save_cache:
           key: 'cache-v1-{{ checksum "requirements.txt" }}'
           paths:
@@ -50,7 +50,7 @@ jobs:
             - 'cache-v1-{{ checksum "requirements.txt" }}'
       - run:
           name: Running test 2
-          command: pytest test_billing_system_2.py
+          command: python3 test_billing_system_2.py
       - save_cache:
           key: 'cache-v1-{{ checksum "requirements.txt" }}'
           paths:
