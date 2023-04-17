@@ -68,7 +68,7 @@ jobs:
       - run: |
           rm -rf .git
           mkdir images
-          docker build . -t bspandan_img
+          docker build . -t bspandan_img  
           docker images
           mkdir -p images
           docker save bspandan_img>images/bspandan_img.tar
