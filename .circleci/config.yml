@@ -13,7 +13,7 @@ jobs:
           name: installing pip and requirements
           command: |
             python3 -m pip install --upgrade pip
-            pip install -r requirements.txt
+            pip install -r requirements.txt 
       - run:
           name: Running application
           command: |
@@ -33,7 +33,7 @@ jobs:
             - 'cache-v1-{{ checksum "requirements.txt" }}'
       - run:
           name: Running tests 1
-          command: python test_billing_system_1.py
+          command: pytest test_billing_system_1.py
       - save_cache:
           key: 'cache-v1-{{ checksum "requirements.txt" }}'
           paths:
@@ -49,7 +49,7 @@ jobs:
             - 'cache-v1-{{ checksum "requirements.txt" }}'
       - run:
           name: Running test 2
-          command: python test_billing_system_2.py
+          command: pytest test_billing_system_2.py
       - save_cache:
           key: 'cache-v1-{{ checksum "requirements.txt" }}'
           paths:
