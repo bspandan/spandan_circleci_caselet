@@ -54,7 +54,7 @@ jobs:
           key: 'cache-v1-{{ checksum "requirements.txt" }}'
           paths:
             - /usr/local/bin
-  creating_artifacts_and_zip:
+  creating_artifacts:
     docker:
       - image: 'cimg/python:3.11.2'
     steps:
